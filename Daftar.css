@@ -8,7 +8,8 @@ html {
 
 .container {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
+    padding: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -32,7 +33,10 @@ html {
 
 /* CARD REGISTER */
 .Daftar-container {
-    position: fixed;
+    position: relative;
+    max-width: 420px;
+    padding-bottom: 30px;
+    padding-top: 30px;
     width: 35%;
     height: 60%;
     background: rgba(255, 255, 255, 0.15);
@@ -136,20 +140,18 @@ html {
 /* RESPONSIVE */
 @media (max-width: 768px){
     .Daftar-container {
-        width: 85%;
-        height: 75vh;
+        width: 90%;
+        max-width: 400px;
+        height: auto;
+        padding: 20px 0;
     }
 
     .form-container {
         width: 100%;
-        height: 45vh;
-    }
-
-    .bg1 {
-        position: fixed;
+        height: auto;
     }
 
     html, body {
-        overflow: hidden;
+        overflow: auto;
     }
 }
