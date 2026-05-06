@@ -34,7 +34,7 @@ html {
 /* CARD REGISTER */
 .Daftar-container {
     position: relative;
-    max-width: 420px;
+    max-width: 450px;
     padding-bottom: 30px;
     padding-top: 30px;
     width: 35%;
@@ -75,7 +75,7 @@ html {
     align-items: center;
     flex-direction: column;
     gap: 20px;
-    width: 80%;
+    width: 85%;
 }
 
 /* INPUT */
