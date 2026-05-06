@@ -7,6 +7,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const loginForm = document.getElementById("loginForm");
 
+    import toast, { Toaster } from 'react-hot-toast';
+
     if (loginForm) {
         loginForm.addEventListener("submit", async (e) => {
             e.preventDefault();
@@ -61,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     return;
                 }
 
-                alert("Login berhasil!");
+                const notify = () => toast('Login Berhasil!');
                 window.location.href = "Dashboard.html";
 
             } catch (err) {
