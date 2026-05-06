@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Game</title>
+    <link rel="stylesheet" href="MainGame.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <script src="Javascript/MainGame.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <div id="rectangle"></div>
+        <div class="bg1"></div>
+
+        <div class="soal-box">
+            <h2 id="soalText"></h2>
+        </div>
+
+        <div class="card">
+
+            <div class="Gambar-container">
+                <div id="feedbackBox" class="feedback hidden"></div>
+            </div>
+
+            <div class="container-jawaban">
+                <button class="Jawaban1" data-jawaban></button>
+                <button class="Jawaban1" data-jawaban></button>
+            </div>
+            <button class="Jawaban2" data-jawaban></button>
+
+            <!-- Background Music -->
+            <audio id="bgMusic" autoplay loop muted>
+                <source src="audio/Audio Musik.mp3" type="audio/mpeg">
+            </audio>
+
+            <!-- Sound Effect -->
+            <audio id="soundBenar">
+                <source src="audio/Audio Benar.mp3" type="audio/mpeg">
+            </audio>
+
+            <audio id="soundSalah">
+                <source src="audio/Audio Salah.mp3" type="audio/mpeg">
+            </audio>
+
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="UploadSoal.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <script src="Javascript/UploadSoal.js" defer></script>
+    <title>Document</title>
+</head>
+<body>
+     <div class="container">
+        <div class="Navbar-container">
+            <div class="profile">
+                <i class="fa-solid fa-circle-user"></i>
+                <a href="Dashboard.html">
+                    <h1>Dashboard <br> Guru</h1>
+                </a>
+                <div class="hamburger">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="menu">
+                <div class="menu-item1">
+                    <i class="fa-solid fa-cloud-arrow-up"></i>
+                    <a href="#">Upload Soal</a>
+                </div>
+
+                <div class="menu-item2">
+                    <i class="fa-solid fa-clipboard-list"></i>
+                    <a href="DaftarSkor.html">Daftar Skor</a>
+                </div>
+            </div>    
+        </div>
+
+        <div class="content">
+            <div class="welcome">
+                <h1>Forum Membuat Soal</h1>
+            </div>
+
+            <div class="Upload">
+                <div class="Menu-kategori">
+                    <h1>Membuat Soal</h1>
+                    <select id="topik" class="Pilih-topik">
+                        <option value="">Pilih Topik</option>
+                        <option value="1">Alat Musik</option>
+                        <option value="2">Rumah Adat</option>
+                    </select>
+                </div>
+
+                <div id="uploadForm" class="Menu-upload">
+                    <h3>Soal:</h3>
+                    <input class="input-box" id="Soal" type="text"/>
+                    <h3>Jawaban Benar:</h3>
+                    <input class="input-box" id="jawabanBenar" type="text"/>
+                    <h3>Jawaban Salah:</h3>
+                    <input class="input-box" id="jawabanSalah1" type="text"/>
+                    <h3>Jawaban Salah:</h3>
+                    <input class="input-box" id="jawabanSalah2" type="text"/>
+                    <h3>Penjelasan:</h3>
+                    <input class="input-box" id="penjelasan" type="text"/>
+                    <h3>Upload File Gambar</h3>
+                    <input id="Gambar" class="input-img" type="File" accept="image"/>
+                </div>
+
+                <div class="btn">
+                    <button id="uploadSoal" class="btn-upload">Upload</button>
+                    <button id="resetForm" class="btn-upload">Reset</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="sidebar-mobile" id="sidebarMobile">
+        <div class="sidebar-content">
+            <h2>Menu</h2>
+
+            <div class="menu-item3">
+                <i class="fa-solid fa-cloud-arrow-up"></i>
+                <a href="UploadSoal.html">Upload Soal</a>
+            </div>
+
+            <div class="menu-item4">
+                <i class="fa-solid fa-clipboard-list"></i>
+                <a href="DaftarSkor.html">Daftar Skor</a>
+            </div>
+
+            <div class="menu-item5">
+                <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                <a href="MainMenu.html">Keluar</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="overlay" id="overlay"></div>
+</body>
+</html>

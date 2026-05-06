@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="Login.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <script defer src="Javascript/Login.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="rectangle-bar" id="rectangle"></div>
+        <div class="container-bg1"></div>
+
+        <div class="container-login">
+            <h1><i class="fa-solid fa-user"></i> LOGIN</h1>
+
+            <form id="loginForm">
+
+                <div class="input-box">
+                    <input id="username" class="input-box1" type="email" placeholder="Email" required/>
+                </div>
+
+                <div class="input-box">
+                    <input id="password" class="input-box1" type="password" placeholder="Password" required/>
+                </div>
+
+                <div class="remember-forgot">
+                    <label><input type="checkbox"/>Ingat Aku!</label>
+                    <a href="LupaPassword.html">Lupa Password?</a>
+                </div>
+
+                <button class="button" type="submit">LOGIN</button>
+            </form>
+
+            <div class="register-link">
+                <p>Belum Punya Akun? <a href="Daftar.html">Daftar</a></p>
+            </div>
+        </div>  
+    </div>
+</body>
+</html>

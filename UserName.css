@@ -1,0 +1,200 @@
+*,
+html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* BACKGROUND */
+.bg1 {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    background-image: url('image/background1.PNG');
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.8);
+}
+
+/* =========================
+   🔥 MODERN RECTANGLE / TOP BAR
+========================= */
+#rectangle {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 75px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 20px;
+
+    background: linear-gradient(
+        135deg,
+        rgba(212, 98, 98, 0.95),
+        rgba(150, 55, 55, 0.95)
+    );
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+
+    border-radius: 0 0 25px 25px;
+
+    animation: slideDown 0.5s ease-in-out;
+}
+
+/* ICON BACK */
+.rectangle i {
+    color: white;
+    font-size: 38px;
+
+    padding: 10px;
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(6px);
+
+    transition: all 0.3s ease;
+}
+
+/* HOVER ICON */
+.rectangle i:hover {
+    transform: scale(1.15) rotate(-5deg);
+    background: rgba(255,255,255,0.25);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* CLICK ICON */
+.rectangle i:active {
+    transform: scale(0.95);
+}
+
+/* ANIMATION BAR */
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* =========================
+   USERNAME CARD
+========================= */
+.username {
+    width: 420px;
+    padding: 30px;
+
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.3);
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+.p-username {
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.input-username {
+    width: 100%;
+    height: 50px;
+
+    border-radius: 12px;
+    border: none;
+    outline: none;
+
+    padding: 10px 15px;
+    font-size: 16px;
+
+    background: rgba(255,255,255,0.9);
+}
+
+.btn-mulai {
+    width: 100%;
+    height: 50px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: linear-gradient(135deg, #2ecc71, #27ae60);
+    color: white;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.btn-mulai:hover {
+    transform: translateY(-3px);
+}
+
+.btn-mulai:active {
+    transform: scale(0.97);
+}
+
+/* ANIMATION CARD */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width:768px) {
+
+    .username {
+        width: 90%;
+    }
+
+    .rectangle i {
+        font-size: 32px;
+    }
+
+    #rectangle {
+        height: 65px;
+        border-radius: 0 0 18px 18px;
+    }
+}

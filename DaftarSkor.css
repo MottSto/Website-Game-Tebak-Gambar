@@ -1,0 +1,476 @@
+*,
+html {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+}
+
+.content {
+    flex-direction: column;
+    display: flex;
+    gap: 15%;
+}
+
+.Navbar-container {
+    width: 250px;
+    background-color: rgb(212, 98, 98);
+    height: 100vh;
+    padding: 20px;
+}
+
+.profile {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.profile i {
+    font-size: 60px;
+    line-height: 1.3;
+}
+
+.profile h1 {
+    margin: 0;
+}
+
+.profile a {
+    text-decoration: none;
+}
+
+.Navbar-container h1 {
+    margin-bottom: 25px;
+}
+
+.menu a {
+    font-size: large;
+    text-decoration: none;
+    color: aliceblue;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background-color: aliceblue;
+    margin: 15px 0;
+}
+
+.content {
+    flex: 1;
+    padding: 30px;
+}
+
+.welcome {
+    background: linear-gradient(135deg, #ffffff, #f7f7f7);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    border-left: 6px solid rgb(212, 98, 98);
+    transition: 0.3s ease;
+}
+
+.welcome:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+}
+
+.Daftar {
+    background: rgb(249, 241, 241);
+    padding: 20px;
+    border-radius: 15px;
+    height: 70vh;
+    margin-top: -70px;
+
+}
+
+table {
+    width: 100%;
+    margin-top: 15px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+.profile h1 {
+    color: aliceblue;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 10px;
+}
+
+.menu-item1,
+.menu-item2 {
+    width: 150px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 15px 0;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.menu-item1 i,
+.menu-item2 i {
+    font-size: 30px;
+    width: 30px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.menu-item1 a,
+.menu-item2 a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: aliceblue;
+    font-size: large;
+}
+
+.menu {
+    transition: background 0.2s ease;
+}
+
+.aksi {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+}
+
+.aksi input {
+    width: 20px;
+    height: 20px;
+}
+
+.aksi button {
+    width: 25px;
+    height: 25px;
+    font-size: large;
+}
+
+.hamburger {
+    display: none;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.4);
+    display: none;
+    z-index: 998;
+}
+
+.overlay.active {
+    display: block;
+}
+
+.sidebar-mobile {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 250px;
+    height: 100vh;
+    background-color: rgb(212, 98, 98);
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 999;
+    padding: 20px;
+}
+
+.sidebar-mobile.active {
+    transform: translateX(0);
+}
+
+.sidebar-content h2 {
+    color: rgb(255, 255, 255);
+    margin-bottom: 20px;
+}
+
+.menu-item3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 15px 0;
+    margin-left: 20%;
+    margin-top: 40px;
+    cursor: pointer;
+    padding: 5px;
+    background-color: rgb(203, 83, 83);
+    width: 150px;
+    height: 40px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.3)
+}
+
+.menu-item4 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 15px 0;
+    margin-left: 20%;
+    margin-top: 35px;
+    cursor: pointer;
+    padding: 10px;
+    padding-left: 10px;
+    gap: 20px;
+    background-color: rgb(203, 83, 83);
+    width: 140px;
+    height: 30px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.3)
+}
+
+.menu-item5 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 15px 0;
+    margin-left: 20%;
+    margin-top: 40px;
+    cursor: pointer;
+    padding: 5px;
+    background-color: rgb(203, 83, 83);
+    width: 150px;
+    height: 40px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.3)
+}
+
+.menu-item3 i {
+    font-size: 35px;
+    color: rgb(0, 0, 0);
+}
+
+.menu-item3 a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.menu-item4 i {
+    font-size: 35px;
+    color: rgb(0, 0, 0);
+}
+
+.menu-item4 a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.menu-item5 i {
+    font-size: 35px;
+    color: rgb(0, 0, 0);
+}
+
+.menu-item5 a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+/* =========================
+   FINAL MODERN UI BOOST
+   (TANPA UBAH UKURAN / LAYOUT)
+========================= */
+
+/* FIX LINK SIDEBAR (HILANGKAN BIRU & UNDERLINE) */
+.menu-item1 a,
+.menu-item2 a {
+    text-decoration: none;
+    color: white;
+}
+
+/* =========================
+   SIDEBAR MODERN EFFECT
+========================= */
+
+.menu-item1,
+.menu-item2 {
+    transition: all 0.25s ease;
+    border-radius: 10px;
+}
+
+/* hover lebih smooth & modern */
+.menu-item1:hover,
+.menu-item2:hover {
+    background: rgba(255, 255, 255, 0.12);
+    transform: translateX(6px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+/* icon animation */
+.menu-item1 i,
+.menu-item2 i {
+    transition: 0.25s ease;
+}
+
+.menu-item1:hover i,
+.menu-item2:hover i {
+    transform: scale(1.2) rotate(-5deg);
+}
+
+/* garis aktif kiri */
+.menu-item1::before,
+.menu-item2::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 3px;
+    height: 100%;
+    background: white;
+    transform: scaleY(0);
+    transition: 0.3s ease;
+}
+
+.menu-item1:hover::before,
+.menu-item2:hover::before {
+    transform: scaleY(1);
+}
+
+
+.Daftar {
+    position: relative;
+    overflow: hidden;
+}
+
+.Daftar::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, rgb(212,98,98), transparent);
+}
+
+/* hover card lebih smooth */
+.Daftar {
+    transition: 0.3s ease;
+}
+
+.Daftar:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 18px 35px rgba(0,0,0,0.12);
+}
+
+/* =========================
+   TABLE MODERN LOOK
+========================= */
+
+table {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th {
+    letter-spacing: 0.5px;
+    font-size: 14px;
+}
+
+td {
+    font-size: 14px;
+}
+
+/* row hover lebih soft */
+tbody tr {
+    transition: 0.2s ease;
+}
+
+tbody tr:hover {
+    background: rgba(212, 98, 98, 0.08);
+}
+
+/* =========================
+   GLOBAL SMOOTH
+========================= */
+
+* {
+    transition: all 0.2s ease;
+}
+
+@media (min-width:769px) {
+    .sidebar-mobile {
+        display: none;
+    }
+}
+
+@media (max-width:768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .Navbar-container {
+        width: 100%;
+        height: 7vh;
+    }
+
+    .profile {
+        font-size: 11px;
+        display: flex;    
+    }
+
+    .profile h1 {
+        padding-top: 7px;
+    }
+
+    .profile i {
+        display: flex;
+        font-size: 50px;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    hr {
+        display: none;
+    }
+
+    .content {
+        padding: 10px;
+        gap: 100px;
+    }
+
+    .welcome {
+        font-size: 10px;
+    }
+
+    .Daftar {
+        font-size: 12px;
+        height: 60vh;
+    }
+
+    .hamburger {
+        display: block;
+        padding-left: 105px;
+        padding-top: 5px;
+   }
+
+   .hamburger i {
+        font-size: 40px;
+   }
+
+   html, body {
+        overflow-x: hidden;
+   }
+}

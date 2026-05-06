@@ -1,0 +1,225 @@
+*,
+html {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* BACKGROUND */
+.bg1 {
+    width: 100%;
+    height: 100vh;
+    background-image: url('image/background1.PNG');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    filter: brightness(0.9) contrast(1.1) saturate(1.2);
+}
+
+/* CARD */
+.card {
+    width: 50%;
+    height: 80%;
+    background: linear-gradient(145deg, rgb(220, 90, 90), rgb(185, 70, 70));
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: fixed;
+    transform: translateY(30px);
+
+    box-shadow: 0 20px 45px rgba(0,0,0,0.3);
+    border: 1px solid rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+}
+
+/* GAMBAR */
+.Gambar-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    width: 70%;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 150px;
+    border-radius: 20px;
+
+    box-shadow: inset 0 0 15px rgba(0,0,0,0.1);
+    border: 2px solid rgba(255,255,255,0.3);
+    overflow: hidden;
+}
+
+/* GAMBAR FULL FIX */
+.Gambar-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* JAWABAN */
+.container-jawaban {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    margin-top: -100px;
+}
+
+/* BUTTON MODERN (TANPA UBAH UKURAN) */
+.Jawaban1,
+.Jawaban2 {
+    width: 200px;
+    height: 60px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+    font-weight: bold;
+
+    background: linear-gradient(145deg, #ffffff, #e6e6e6);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+
+    transition: all 0.25s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* hover effect */
+.Jawaban1:hover,
+.Jawaban2:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.3);
+    background: linear-gradient(145deg, #f8f8f8, #dcdcdc);
+}
+
+/* klik effect */
+.Jawaban1:active,
+.Jawaban2:active {
+    transform: translateY(1px);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+
+/* SOAL BOX */
+.soal-box {
+    position: fixed;
+    top: 30px;
+    width: 50%;
+    height: 70px;
+
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(12px);
+
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    border: 1px solid rgba(255,255,255,0.3);
+}
+
+.soal-box h2 {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+
+    color: #fff;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.4);
+}
+
+/* FEEDBACK */
+.feedback {
+    position: absolute;
+    width: 200px;
+    height: 80px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+
+    z-index: 10;
+}
+
+.Gambar-container .feedback {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.benar-box {
+    background-color: #28a745;
+}
+
+.salah-box {
+    background-color: #dc3545;
+}
+
+.hidden {
+    display: none;
+}
+
+#overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    backdrop-filter: blur(6px);
+    background: rgba(0,0,0,0.2);
+    z-index: 100;
+}
+
+/* MOBILE */
+@media (max-width:768px) {
+    .card {
+        background-color: transparent;
+        width: 100%;
+    }
+
+    .Gambar-container {
+        width: 90%;
+    }
+
+    .container-jawaban {
+        width: 85%;
+    }
+
+    .Jawaban2 {
+        width: 40%;
+    }
+
+    .soal-box {
+        width: 90%;
+    }
+
+    .soal-box h2 {
+        font-size: large;
+        text-align: center;
+    }
+
+    html, body {
+        overflow: hidden;
+    }
+}

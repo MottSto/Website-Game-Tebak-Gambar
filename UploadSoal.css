@@ -1,0 +1,504 @@
+*,
+html {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+}
+
+
+.Navbar-container {
+    width: 250px;
+    min-width: 290px;
+    background-color: rgb(212, 98, 98);
+    height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.profile {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.profile i {
+    font-size: 60px;
+    line-height: 1.3;
+}
+
+.profile h1 {
+    color: aliceblue;
+    margin: 0;
+}
+
+.profile a {
+    text-decoration: none;
+}
+
+.Navbar-container h1 {
+    margin-bottom: 25px;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 10px;
+}
+
+.menu-item1,
+.menu-item2 {
+    width: 140px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 15px 0;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: 0.3s ease;
+    position: relative;
+}
+
+/* hover animasi geser */
+.menu-item1:hover,
+.menu-item2:hover {
+    background: rgba(255,255,255,0.15);
+    transform: translateX(6px);
+}
+
+/* garis kiri animasi */
+.menu-item1::before,
+.menu-item2::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background: white;
+    transform: scaleY(0);
+    transition: 0.3s;
+}
+
+.menu-item1:hover::before,
+.menu-item2:hover::before {
+    transform: scaleY(1);
+}
+
+/* icon hover */
+.menu-item1 i,
+.menu-item2 i {
+    font-size: 30px;
+    width: 30px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.menu-item1:hover i,
+.menu-item2:hover i {
+    transform: scale(1.2);
+}
+
+.menu a,
+.menu-item1 a,
+.menu-item2 a,
+.menu-item3 a,
+.menu-item4 a,
+.menu-item5 a {
+    color: white !important;
+    text-decoration: none !important;
+    display: flex;
+    align-items: center;
+}
+
+.menu-item1,
+.menu-item2,
+.menu-item3,
+.menu-item4,
+.menu-item5 {
+    transition: all 0.3s ease;
+    border-radius: 10px;
+}
+
+.menu-item1:hover,
+.menu-item2:hover,
+.menu-item3:hover,
+.menu-item4:hover,
+.menu-item5:hover {
+    background: rgba(255,255,255,0.15);
+    transform: translateX(6px);
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background-color: aliceblue;
+    margin: 15px 0;
+}
+
+.content {
+    flex: 1;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+}
+
+.welcome {
+    width: 100%;
+    background: linear-gradient(135deg, #ffffff, #f7f7f7);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    border-left: 6px solid rgb(212, 98, 98);
+    transition: 0.3s ease;
+}
+
+.welcome:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+}
+
+.Upload {
+    width: 100%;
+    max-width: 520px;
+    padding: 30px;
+    background: rgb(224, 221, 221);
+    border-radius: 15px;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
+
+    display: flex;
+    flex-direction: column;
+}
+
+.Upload {
+    background: #ffffff;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+    border-top: 5px solid rgb(212, 98, 98);
+    transition: 0.3s ease;
+}
+
+.Upload:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 35px rgba(0,0,0,0.18);
+}
+
+.Menu-upload {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.Menu-upload label {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.input-box {
+    width: 100%;
+    height: 38px;
+    border-radius: 7px;
+    border: 2px solid rgba(21, 15, 15, 0.2);
+    padding-left: 12px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.input-img {
+    margin-top: 5px;
+    font-size: 16px;
+}
+
+.input-box {
+    background: #f8f8f8;
+    transition: 0.3s ease;
+}
+
+.input-box:focus {
+    outline: none;
+    border: 2px solid rgb(212, 98, 98);
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(212, 98, 98, 0.2);
+}
+
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 10px;
+}
+
+.btn {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 35px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.btn-upload {
+    width: 110px;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.btn-upload:hover {
+    background-color: rgb(224, 122, 122);
+}
+
+.btn-upload {
+    background: rgb(212, 98, 98);
+    transition: 0.25s ease;
+}
+
+.btn-upload:hover {
+    background: rgb(180, 70, 70);
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
+.Menu-upload {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.Menu-upload h3 {
+    margin-top: 5px;
+}
+
+.Menu-kategori {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.Pilih-topik {
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.Menu-kategori h1 {
+    font-size: 25px;
+}
+
+.hamburger {
+    display: none;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.4);
+    display: none;
+    z-index: 998;
+}
+
+.overlay.active {
+    display: block;
+}
+
+/* SIDEBAR MOBILE (default hidden) */
+/* SIDEBAR DARI KANAN */
+.sidebar-mobile {
+    position: fixed;
+    top: 0;
+    right: 0; /* pindah ke kanan */
+    width: 290px;
+    height: 100vh;
+    background-color: rgb(212, 98, 98);
+    transform: translateX(100%); /* sembunyi ke kanan */
+    transition: transform 0.3s ease;
+    z-index: 999;
+    padding: 20px;
+}
+
+.sidebar-mobile.active {
+    transform: translateX(0); /* muncul */
+}
+
+/* ISI SIDEBAR */
+.sidebar-content h2 {
+    color: rgb(255, 255, 255);
+    margin-bottom: 20px;
+}
+
+.menu-item3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 15px 0;
+    margin-left: 20%;
+    margin-top: 40px;
+    cursor: pointer;
+    padding: 5px;
+    background-color: rgb(203, 83, 83);
+    width: 155px;
+    height: 50px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.3)
+}
+
+.menu-item4 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 15px 0;
+    margin-left: 20%;
+    margin-top: 35px;
+    cursor: pointer;
+    padding: 10px;
+    padding-left: 10px;
+    gap: 20px;
+    background-color: rgb(203, 83, 83);
+    width: 155px;
+    height: 50px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.3)
+}
+
+.menu-item5 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 15px 0;
+    margin-left: 20%;
+    margin-top: 40px;
+    cursor: pointer;
+    padding: 5px;
+    background-color: rgb(203, 83, 83);
+    width: 155px;
+    height: 50px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.3)
+}
+
+.menu-item3 i {
+    font-size: 35px;
+    color: rgb(0, 0, 0);
+}
+
+.menu-item3 a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.menu-item4 i {
+    font-size: 35px;
+    color: rgb(0, 0, 0);
+}
+
+.menu-item4 a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.menu-item5 i {
+    font-size: 35px;
+    color: rgb(0, 0, 0);
+}
+
+.menu-item5 a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+/* HANYA UNTUK MOBILE */
+@media (min-width:769px) {
+    .sidebar-mobile {
+        display: none;
+    }
+}
+
+@media (max-width:768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .Navbar-container {
+        width: 100%;
+        height: 92px;
+    }
+
+    .profile {
+        font-size: 11px;
+        display: flex;    
+    }
+
+    .profile h1 {
+        padding-top: 7px;
+    }
+
+    .profile i {
+        display: flex;
+        font-size: 50px;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    hr {
+        display: none;
+    }
+
+    .content {
+        padding: 10px;
+        gap: 30px;
+    }
+
+    .welcome {
+        font-size: 10px;
+    }
+
+    .Daftar {
+        font-size: 12px;
+        height: 60vh;
+    }
+
+    .hamburger {
+        display: block;
+        padding-left: 105px;
+        padding-top: 5px;
+   }
+
+   .hamburger i {
+        font-size: 40px;
+   }
+
+   .Upload {
+        margin-bottom: 0 100px;
+   }
+
+   .Menu-kategori h1 {
+        white-space: nowrap;
+        font-size: 25px;
+   }
+
+}
+

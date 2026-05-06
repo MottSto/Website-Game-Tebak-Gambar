@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Daftar.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <script src="Javascript/Daftar.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <div class="bg1"></div>
+        <div class="Daftar-container">
+            <h1 class="Daftar"><i class="fa-solid fa-user"></i>DAFTAR</h1>
+
+            <form class="form-container" id="registerForm">
+                <input class="Data-container" type="text" id="nama" placeholder="Nama Lengkap"/>
+                <input class="Data-container" type="email" id="email" placeholder="Email"/>
+                <input class="Data-container" type="password" id="password" placeholder="Kata Sandi"/>
+                <input class="Data-container" type="password" id="confirmPassword" placeholder="Ulangi Kata Sandi"/>
+
+                <button class="Button-daftar" type="submit">Daftar</button>
+            </form>
+            <p>Sudah punya akun? <a href="Login.html">Login</a></p>
+        </div>
+    </div>
+</body>
+</html>
