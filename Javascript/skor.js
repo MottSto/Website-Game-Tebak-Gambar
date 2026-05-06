@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             localStorage.removeItem("sudah_simpan");
             localStorage.removeItem("mulaiBaru");
 
-            window.location.href = "MainMenu.html";
+            window.location.href = "Index.html";
         });
     }
 });
