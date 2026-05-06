@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const passwordInput = document.getElementById("password");
 
             if (!emailInput || !passwordInput) {
-                alert("Input tidak ditemukan!");
+                toastr.error("Input Tidak Ditemukan!");
                 return;
             }
 
@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const password = passwordInput.value;
 
             if (!email || !password) {
-                alert("Email dan password wajib diisi!");
+                toastr.error("Email dan password wajib diisi!");
                 return;
             }
 
@@ -48,14 +48,14 @@ document.addEventListener("DOMContentLoaded", () => {
                             });
 
                             if (resendError) {
-                                alert("Gagal kirim ulang email: " + resendError.message);
+                                toastr.error("Gagal kirim ulang email: " + resendError.message);
                             } else {
-                                alert("Email verifikasi berhasil dikirim ulang. Cek inbox/spam!");
+                                toastr.success("Email verifikasi berhasil dikirim ulang. Cek inbox/spam!");
                             }
                         }
 
                     } else {
-                        alert("Login gagal: " + error.message);
+                        toastr.error("Login gagal: " + error.message);
                     }
 
                     return;
@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     "closeButton": true,
                     "progressBar": true,
                     "positionClass": "toast-top-right",
-                    "timeOut": "5000",        // ⬅️ 5 detik (atur sesuai mau kamu)
+                    "timeOut": "5000",
                     "extendedTimeOut": "2000",
                     "showDuration": "300",
                     "hideDuration": "300",
@@ -78,8 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 }, 1500);
 
             } catch (err) {
-                console.error("ERROR:", err);
-                alert("Terjadi kesalahan!");
+                toastr.error("Terjadi Kesalahan!");
             }
         });
     }
