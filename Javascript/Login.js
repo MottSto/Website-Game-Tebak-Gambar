@@ -61,8 +61,21 @@ document.addEventListener("DOMContentLoaded", () => {
                     return;
                 }
 
+                toastr.options = {
+                    "closeButton": true,
+                    "progressBar": true,
+                    "positionClass": "toast-top-right",
+                    "timeOut": "5000",        // ⬅️ 5 detik (atur sesuai mau kamu)
+                    "extendedTimeOut": "2000",
+                    "showDuration": "300",
+                    "hideDuration": "300",
+                    "preventDuplicates": true
+                };
+
                 toastr.success("Login Berhasil!");
-                window.location.href = "Dashboard.html";
+                setTimeout(() => {
+                    window.location.href = "Dashboard.html";
+                }, 1500);
 
             } catch (err) {
                 console.error("ERROR:", err);
