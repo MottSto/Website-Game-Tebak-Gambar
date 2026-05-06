@@ -129,14 +129,21 @@ html {
 }
 
 .soal-box h2 {
-    font-size: 24px;
-    font-weight: bold;
+    font-size: 26px;
+    font-weight: 800;
     text-align: center;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
+    line-height: 1.3;
+    letter-spacing: 0.5px;
 
-    color: #fff;
-    text-shadow: 0 2px 6px rgba(0,0,0,0.4);
+    color: #ffffff;
+
+    /* efek biar lebih “pop” */
+    text-shadow: 
+        0 2px 4px rgba(0,0,0,0.4),
+        0 4px 10px rgba(0,0,0,0.25);
+
+    /* font modern */
+    font-family: "Poppins", "Segoe UI", Arial, sans-serif;
 }
 
 /* FEEDBACK */
@@ -217,6 +224,71 @@ html {
     .soal-box h2 {
         font-size: large;
         text-align: center;
+    }
+
+    html, body {
+        overflow: hidden;
+    }
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+/* CEGAH OVERFLOW ANEH DI CHROME */
+.container {
+    width: 100%;
+}
+
+/* CARD TETAP CENTER & STABIL */
+.card {
+    max-width: 100%;
+}
+
+/* JAWABAN BIAR TIDAK TERLALU MELEKAT */
+.container-jawaban {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px; /* lebih longgar dari sebelumnya */
+}
+
+/* kasih jarak aman antar button */
+.Jawaban1,
+.Jawaban2 {
+    margin: 5px;
+}
+
+/* =========================
+   MOBILE FIX TANPA UBah STYLE
+========================= */
+@media (max-width:768px) {
+
+    .card {
+        width: 100%;
+        height: 80%;
+    }
+
+    .container-jawaban {
+        gap: 20px;
+        justify-content: center;
+        width: 90%;
+    }
+
+    .Jawaban1,
+    .Jawaban2 {
+        width: 45%;        /* biar tidak terlalu sempit */
+        min-width: 140px;  /* biar tidak nempel */
+    }
+
+    .Gambar-container {
+        width: 90%;
+    }
+
+    .soal-box {
+        width: 90%;
     }
 
     html, body {

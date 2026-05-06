@@ -408,6 +408,17 @@ tbody tr:hover {
     transition: all 0.2s ease;
 }
 
+.fa-trash {
+    cursor: pointer;
+    color: #e74c3c;
+    transition: 0.2s;
+}
+
+.fa-trash:hover {
+    transform: scale(1.2);
+    color: #c0392b;
+}
+
 @media (min-width:769px) {
     .sidebar-mobile {
         display: none;

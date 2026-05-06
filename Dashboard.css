@@ -115,7 +115,7 @@ table {
 }
 
 th, td {
-    padding: 10px;
+    padding: 10px ;
     text-align: left;
 }
 
@@ -126,6 +126,17 @@ th {
 
 tr:hover td {
     background: #f5f5f5;
+}
+
+.fa-trash {
+    cursor: pointer;
+    color: #e74c3c;
+    transition: 0.2s;
+}
+
+.fa-trash:hover {
+    transform: scale(1.2);
+    color: #c0392b;
 }
 
 /* =========================
@@ -295,5 +306,64 @@ html, body {
 
     .hamburger i {
         font-size: 40px;
+    }
+}
+
+html, body {
+    height: 100%;
+}
+
+/* FIX FLEX BIAR TIDAK RUSAK DI CHROME */
+.container {
+    min-height: 100vh;
+}
+
+/* CEGAH CONTENT KEJEPIT */
+.content {
+    min-width: 0;
+}
+
+/* TABLE BIAR TIDAK KELUAR LAYAR */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    overflow-x: auto;
+}
+
+/* SIDEBAR TETAP STABIL */
+.Navbar-container {
+    flex-shrink: 0;
+}
+
+/* =========================
+   MOBILE FIX (TIDAK UBAH STYLE)
+========================= */
+@media (max-width:768px) {
+
+    .container {
+        flex-direction: column;
+    }
+
+    /* TETAP JAGA DESAIN HEADER SIDEBAR */
+    .Navbar-container {
+        width: 100%;
+    }
+
+    /* BIAR CONTENT TIDAK ERROR LAYOUT */
+    .content {
+        width: 100%;
+    }
+
+    /* DAFTAR TETAP STABIL */
+    .Daftar {
+        width: 90%;
+        overflow-x: hidden;
+    }
+
+    /* FIX SCROLL CHROME */
+    html, body {
+        overflow: auto;
+        height: auto;
     }
 }
