@@ -25,6 +25,11 @@ html {
     z-index: -1;
 }
 
+.bg1, .bg2, .bg3 {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
 .bg1 {
     background-image: url('image/image1.jpeg');
 }

@@ -1,9 +1,12 @@
-const classes = ["bg1", "bg2", "bg3"];
+const backgrounds = document.querySelectorAll(".bg1, .bg2, .bg3");
 let index = 0;
 
-document.body.className = classes[index];
+backgrounds[index].style.opacity = "1";
 
 setInterval(() => {
-    index = (index + 1) % classes.length;
-    document.body.className = classes[index];
+    backgrounds[index].style.opacity = "0";
+
+    index = (index + 1) % backgrounds.length;
+
+    backgrounds[index].style.opacity = "1";
 }, 2000);
