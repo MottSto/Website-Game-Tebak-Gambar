@@ -197,4 +197,8 @@ html {
         height: 65px;
         border-radius: 0 0 18px 18px;
     }
+
+    html, body {
+        overflow: hidden;
+    }
 }

@@ -267,19 +267,25 @@ html, body {
 @media (max-width:768px) {
 
     .card {
-        width: 100%;
-        height: 80%;
+        background: transparent !important;
+        box-shadow: none !important;
+        border: none !important;
+        backdrop-filter: none !important;
     }
 
     .container-jawaban {
-        gap: 20px;
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;   /* penting: cegah turun */
         justify-content: center;
-        width: 90%;
+        align-items: center;
+        gap: 15px;
+        width: 100%;
     }
 
     .Jawaban1,
     .Jawaban2 {
-        width: 45%;        /* biar tidak terlalu sempit */
+        width: 40%;        /* biar tidak terlalu sempit */
         min-width: 140px;  /* biar tidak nempel */
     }
 
@@ -294,4 +300,82 @@ html, body {
     html, body {
         overflow: hidden;
     }
+}
+
+/* =========================
+   CHROME + MOBILE FIX STABIL
+   (TIDAK MENGUBAH STYLE DESAIN)
+========================= */
+
+@media (max-width:768px) {
+
+    /* FIX BODY CHROME (vh bug) */
+    html, body {
+        height: 100%;
+    }
+
+    /* FIX CONTAINER BIAR TIDAK “KEPOTONG” */
+    .container {
+        height: 100dvh; /* lebih stabil dari 100vh di mobile Chrome */
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* CARD TETAP CENTER TAPI TIDAK KENA BUG CHROME */
+   @media (max-width:768px) {
+
+    .card {
+        width: 100%;
+        height: 100dvh;
+        padding-top: 40px;
+
+        background: linear-gradient(145deg, rgb(220, 90, 90), rgb(185, 70, 70));
+
+        box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+
+        border-radius: 0; 
+
+        position: fixed;
+        top: 0;
+        left: 0;
+
+        transform: none;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+}
+
+    /* GAMBAR TETAP PROPORSIONAL */
+    .Gambar-container {
+        height: 45vh;
+        width: 90%;
+    }
+
+    /* SOAL TETAP DI ATAS */
+    .soal-box {
+        position: fixed;
+        top: 15px;
+        width: 90%;
+        margin-top: 20px;
+    }
+
+    /* JAWABAN TETAP RAPI 1 BARIS */
+    .container-jawaban {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: nowrap;
+        gap: 15px;
+        width: 100%;
+    }
+
+    .Jawaban1,
+    .Jawaban2 {
+        width: 40%;
+        height: 55px;
+    }
+
 }
