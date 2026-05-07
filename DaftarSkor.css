@@ -350,7 +350,7 @@ th, td {
 
 .Daftar {
     position: relative;
-    overflow: hidden;
+    overflow-y: scroll;
 }
 
 .Daftar::before {
@@ -398,6 +398,10 @@ tbody tr {
 
 tbody tr:hover {
     background: rgba(212, 98, 98, 0.08);
+}
+
+html, body {
+    overflow: hidden;
 }
 
 /* =========================
