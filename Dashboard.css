@@ -20,7 +20,7 @@ html {
 .Navbar-container {
     width: 290px;
     background: linear-gradient(180deg, rgb(212, 98, 98), rgb(180, 70, 70));
-    
+
     height: 100vh;
 
     display: flex;  
@@ -475,32 +475,88 @@ table {
 ========================= */
 @media (max-width:768px) {
 
-    .container {
-        flex-direction: column;
-    }
-
-    /* TETAP JAGA DESAIN HEADER SIDEBAR */
+    /* SIDEBAR ATAS */
     .Navbar-container {
         width: 100%;
+        height: 100px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 15px;
     }
 
-    /* BIAR CONTENT TIDAK ERROR LAYOUT */
+    /* PROFILE */
+   .profile {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex: 1; /* ini bikin dia ambil sisa ruang */
+    }
+
+    .profile i {
+        font-size: 50px;
+    }
+
+    .profile h1 {
+        padding-top: 25px;
+        font-size: 20px;
+        line-height: 1.2;
+    }
+
+    /* 🔥 FIX INI: HAMBURGER KE KANAN (TIDAK TERLALU MELEKAT) */
+    .hamburger {
+        display: block;
+        padding: 0;
+        margin-left: auto;
+        margin-right: 10px; /* jarak dari kanan */
+    }
+
+    .hamburger i {
+        font-size: 28px;
+    }
+
+    /* MENU HIDE */
+    .menu {
+        display: none;
+    }
+
+    hr {
+        display: none;
+    }
+
+    /* CONTENT */
     .content {
-        width: 100%;
+        padding: 15px;
+        gap: 20px;
     }
 
-    /* DAFTAR TETAP STABIL */
+    .welcome {
+        font-size: 14px;
+        padding: 15px;
+    }
+
     .Daftar {
-        width: 90%;
-        overflow-x: hidden;
+        width: 100%;
+        max-height: 65vh;
+        overflow: auto;
+        margin-top: 0;
+        font-size: 12px;
     }
 
-    /* FIX SCROLL CHROME */
+    .menu-item6 {
+        display: none;
+    }
+
+    table {
+        font-size: 12px;
+        min-width: 600px;
+    }
+
     html, body {
-        overflow: auto;
-        height: auto;
+        overflow-y: hidden;
     }
 }
+
 
 /* =========================
    SAMAKAN TABEL DENGAN DAFTAR SKOR
@@ -574,4 +630,127 @@ tbody tr:hover {
 /* GLOBAL SMOOTH */
 * {
     transition: all 0.2s ease;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.4);
+    display: none;
+    z-index: 998;
+}
+
+.overlay.active {
+    display: block;
+}
+
+.sidebar-mobile {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 250px;
+    height: 100vh;
+    background-color: rgb(212, 98, 98);
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 999;
+    padding: 20px;
+}
+
+.sidebar-mobile.active {
+    transform: translateX(0);
+}
+
+.sidebar-content h2 {
+    color: rgb(255, 255, 255);
+    margin-bottom: 20px;
+}
+
+.menu-item3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 15px 0;
+    margin-left: 20%;
+    margin-top: 40px;
+    cursor: pointer;
+    padding: 5px;
+    background-color: rgb(203, 83, 83);
+    width: 150px;
+    height: 40px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.3)
+}
+
+.menu-item4 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 15px 0;
+    margin-left: 20%;
+    margin-top: 35px;
+    cursor: pointer;
+    padding: 10px;
+    padding-left: 10px;
+    gap: 20px;
+    background-color: rgb(203, 83, 83);
+    width: 140px;
+    height: 30px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.3)
+}
+
+.menu-item5 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 15px 0;
+    margin-left: 20%;
+    margin-top: 40px;
+    cursor: pointer;
+    padding: 5px;
+    background-color: rgb(203, 83, 83);
+    width: 150px;
+    height: 40px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.3)
+}
+
+.menu-item3 i {
+    font-size: 35px;
+    color: rgb(0, 0, 0);
+}
+
+.menu-item3 a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.menu-item4 i {
+    font-size: 35px;
+    color: rgb(0, 0, 0);
+}
+
+.menu-item4 a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.menu-item5 i {
+    font-size: 35px;
+    color: rgb(0, 0, 0);
+}
+
+.menu-item5 a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
 }

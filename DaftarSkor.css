@@ -580,3 +580,94 @@ html, body {
         overflow-x: hidden;
    }
 }
+
+/* =========================
+   UNIFIKASI DASHBOARD = DAFTAR SKOR (MOBILE FIX)
+========================= */
+
+/* NAVBAR MOBILE SAMA PERSIS DASHBOARD */
+@media (max-width:768px) {
+
+    .Navbar-container {
+        width: 100%;
+        height: 100px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 15px;
+    }
+
+    .profile {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex: 1;
+    }
+
+    .profile i {
+        font-size: 50px;
+    }
+
+    .profile h1 {
+        padding-top: 25px;
+        font-size: 20px;
+        line-height: 1.2;
+    }
+
+    .hamburger {
+        display: block;
+        margin-left: auto;
+        margin-right: 10px;
+    }
+
+    .hamburger i {
+        font-size: 28px;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    hr {
+        display: none;
+    }
+}
+
+/* =========================
+   CONTENT MOBILE RAPI
+========================= */
+@media (max-width:768px) {
+
+    .content {
+        padding: 15px;
+        gap: 20px;
+    }
+
+    .welcome {
+        padding: 15px;
+        font-size: 14px;
+    }
+
+    .Daftar {
+        width: 100%;
+        height: auto;
+        max-height: 65vh;
+        overflow: auto;
+        margin-top: 0;
+        padding: 15px;
+        overflow-y: auto;
+    }
+
+    .menu-item6 {
+        display: none;
+    }
+
+    table {
+        min-width: 600px; /* biar scroll rapi */
+        font-size: 12px;
+    }
+
+    th, td {
+        padding: 8px;
+    }
+}
