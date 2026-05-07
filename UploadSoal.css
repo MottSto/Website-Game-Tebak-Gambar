@@ -502,3 +502,52 @@ hr {
 
 }
 
+/* =========================
+   CHROME CONSISTENCY FIX
+   (TIDAK MENGUBAH STYLE DESAIN)
+========================= */
+
+html, body {
+    height: 100%;
+    overflow-x: hidden;
+}
+
+/* FIX FLEX STABILITY CHROME */
+.container {
+    min-height: 100vh;
+    align-items: stretch;
+}
+
+/* FIX SIDEBAR HEIGHT (BIAR TIDAK NGEBUG DI CHROME) */
+.Navbar-container {
+    height: 100vh;
+    position: sticky;
+    top: 0;
+}
+
+/* FIX CONTENT BIAR TIDAK TURUN RANDOM */
+.content {
+    min-height: 100vh;
+}
+
+/* FIX FORM CARD STABILITY */
+.Upload {
+    width: 100%;
+    max-width: 520px;
+}
+
+/* FIX INPUT SHIFT DI CHROME */
+.input-box {
+    line-height: normal;
+}
+
+/* FIX BUTTON ALIGNMENT CHROME */
+.btn {
+    align-items: center;
+}
+
+/* FIX SCROLL OVERFLOW HALUS */
+body {
+    -webkit-font-smoothing: antialiased;
+}
+
