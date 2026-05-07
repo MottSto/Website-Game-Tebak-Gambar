@@ -152,6 +152,6 @@ html {
     }
 
     html, body {
-        overflow: auto;
+        overflow: hidden;
     }
 }

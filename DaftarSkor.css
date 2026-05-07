@@ -16,10 +16,18 @@ html {
 }
 
 .Navbar-container {
-    width: 250px;
-    background-color: rgb(212, 98, 98);
+    width: 290px;
+    background: linear-gradient(180deg, rgb(212, 98, 98), rgb(180, 70, 70));
+    
     height: 100vh;
+
+    display: flex;  
+    flex-direction: column;
+
     padding: 20px;
+    box-sizing: border-box;
+    box-shadow: 8px 0 20px rgba(0,0,0,0.15);
+    border-right: 1px solid rgba(255,255,255,0.1);
 }
 
 .profile {
@@ -103,8 +111,91 @@ th, td {
 .menu {
     display: flex;
     flex-direction: column;
+
+    flex: 1; /* 🔥 penting supaya mengisi tinggi sidebar */
+
     padding: 20px;
     gap: 10px;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.menu-bottom {
+    margin-top: auto; /* 🔥 ini yang dorong ke bawah */
+}
+
+.menu-item6 {
+    width: 140px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    padding: 8px;
+
+    cursor: pointer;
+
+    border-radius: 10px;
+
+    transition: 0.3s ease;
+
+    position: relative;
+
+    margin: 0 auto; /* 🔥 INI YANG MEMBUAT KE TENGAH */
+
+    color: white;
+}
+
+/* HOVER SAMA */
+.menu-item6:hover {
+    background: rgba(255,255,255,0.15);
+    transform: translateX(6px);
+}
+
+/* ICON */
+.menu-item6 i {
+    font-size: 35px;
+    color: rgb(0, 0, 0);
+    transition: 0.3s;
+}
+
+/* ICON HOVER */
+.menu-item6:hover i {
+    transform: scale(1.2);
+}
+
+/* LINK */
+.menu-item6 a {
+    color: white !important;
+    text-decoration: none !important;
+    font-size: 20px;
+}
+
+/* GARIS KIRI ANIMASI */
+.menu-item6::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    width: 4px;
+    height: 100%;
+
+    background: white;
+
+    transform: scaleY(0);
+
+    transition: 0.3s;
+}
+
+.menu-item6:hover::before {
+    transform: scaleY(1);
 }
 
 .menu-item1,
