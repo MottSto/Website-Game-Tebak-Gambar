@@ -651,7 +651,7 @@ html, body {
     .Daftar {
         width: 100%;
         height: auto;
-        max-height: 65vh;
+        max-height: 60vh;
         overflow: auto;
         margin-top: 0;
         padding: 15px;
@@ -671,3 +671,4 @@ html, body {
         padding: 8px;
     }
 }
+

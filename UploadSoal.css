@@ -736,7 +736,7 @@ body {
     }
 
     .Menu-kategori h1 {
-        max-font-size: 18px;
+        font-size: 18px;
         white-space: normal;
     }
 
@@ -846,6 +846,121 @@ body {
     .Upload {
         padding: 15px;
         border-radius: 12px;
+    }
+}
+
+/* =========================
+   MOBILE CHROME FIX FINAL (SAFE)
+   TANPA UBAH UKURAN / STYLE DASAR
+========================= */
+
+@media (max-width:768px) {
+
+    /* CEGAH FLEX NGEHANCURIN LAYOUT */
+    .container {
+        flex-direction: column;
+    }
+
+    /* BIAR NAVBAR TIDAK OVERFLOW CHROME */
+    .Navbar-container {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        height: 90px;
+        width: 100%;
+        position: sticky;
+        top: 0;
+        z-index: 999;
+    }
+
+    /* PROFILE RAPI DI MOBILE */
+    .profile {
+        align-items: center;
+        gap: 10px;
+    }
+
+    .profile h1 {
+        font-size: 18px;
+    }
+
+    /* MENU HILANG (SUDAH ANDA BUAT) */
+    .menu {
+        display: none !important;
+    }
+
+    hr {
+        display: none;
+    }
+
+    /* CONTENT SUPAYA TIDAK MELEBAR DI CHROME */
+    .content {
+        width: 100%;
+        align-items: center;
+        padding: 10px;
+    }
+
+    /* =========================
+       FIX MENU KATEGORI SEJAJAR
+    ========================= */
+    .Menu-kategori {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    .Menu-kategori h1 {
+        flex: 1;
+        font-size: 16px;
+        white-space: nowrap;
+    }
+
+    .Pilih-topik {
+        flex-shrink: 0;
+    }
+
+    /* =========================
+       FIX INPUT BIAR TIDAK TURUN RANDOM
+    ========================= */
+    .Menu-upload {
+        width: 100%;
+    }
+
+    .input-box {
+        width: 100%;
+    }
+
+    /* =========================
+       FIX BUTTON UPLOAD + RESET SEJAJAR
+    ========================= */
+    .btn {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .btn-upload {
+        flex: 1;
+        max-width: 120px;
+    }
+
+    /* =========================
+       CHROME FIX OVERFLOW BUG
+    ========================= */
+    html, body {
+        height: 100%;
+        overflow-x: hidden;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* FIX FONT RAPI DI MOBILE CHROME */
+    body {
+        -webkit-text-size-adjust: 100%;
     }
 }
 
