@@ -95,8 +95,8 @@ hr {
     background: linear-gradient(135deg, #ffffff, #fafafa);
     padding: 20px;
     border-radius: 15px;
-    height: 60vh;
-    margin-top: -70px;
+    height: 80vh;
+    margin-top: -85px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.08);
     transition: 0.3s ease;
     border: 1px solid rgba(0,0,0,0.05);
