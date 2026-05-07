@@ -155,4 +155,8 @@ html {
         min-height: 100vh;
         gap: 25px;
     }
+
+    .Login-btn {
+        max-width: 135px;
+    }
 }

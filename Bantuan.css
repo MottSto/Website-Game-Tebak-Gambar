@@ -281,19 +281,79 @@ body {
     }
 
     .li-tutor {
+        margin-left: 10px;
         font-size: 15px;
     }
 
     .ol-tutor img {
         height: 150px;
+        margin-left: 10px;
     }
 
     #rectangle {
-        height: 60px;
+        height: 70px;
+        width: 100%;
+        border-radius: 0 0 18px 18px;
     }
 
     #rectangle i {
         font-size: 26px;
         padding: 8px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* =========================
+       FIX CHROME MOBILE SCROLL
+    ========================= */
+
+    html, body {
+        height: 100%;
+        overflow-x: hidden;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* FIX BACKGROUND CHROME BUG */
+    body {
+        background-attachment: scroll; /* penting banget */
+        min-height: 100dvh;
+    }
+
+    /* FIX CONTAINER STABILITY */
+    .container {
+        width: 100%;
+        min-height: 100dvh;
+        align-items: flex-start;
+    }
+
+    /* FIX CARD/BOX BIAR TIDAK “NGEFLOAT” */
+    .container-tutor {
+        width: 100%;
+        margin-top: 80px;
+        border-radius: 18px;
+        transform: none; /* hilangkan efek lompat di Chrome */
+    }
+
+    /* FIX TEXT BIAR TIDAK KEKECILAN DI CHROME */
+    .h1-tutor {
+        line-height: 1.2;
+    }
+
+    .h2-tutor {
+        line-height: 1.4;
+    }
+
+    /* FIX IMAGE STABIL DI CHROME */
+    .ol-tutor img {
+        width: 100%;
+        height: auto;
+        max-height: 200px;
+    }
+
+    /* FIX SCROLL CARD DI CHROME */
+    .container-tutor {
+        overflow: visible;
     }
 }
