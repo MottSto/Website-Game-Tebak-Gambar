@@ -64,6 +64,19 @@ html {
     position: relative;
 }
 
+.menu-item6 {
+    width: 140px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 15px 0;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: 0.3s ease;
+    position: relative;
+}
+
 /* hover animasi geser */
 .menu-item1:hover,
 .menu-item2:hover {
