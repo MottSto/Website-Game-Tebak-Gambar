@@ -14,38 +14,31 @@ body {
     background: #f5f5f5;
 }
 
-.background {
+body {
     width: 100%;
     min-height: 100vh;
+
+    font-family: Arial, Helvetica, sans-serif;
 
     background-image: url("image/background1.PNG");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
 
-    padding-bottom: 50px;
+    overflow-x: hidden;
 }
 
-/* =========================
-   CONTAINER
-========================= */
 .container {
-     width: 100%;
-    min-height: 100vh;
-    padding: 30px;
-
+    width: 100%;
     display: flex;
     justify-content: center;
-    align-items: flex-start;
-
-    background: transparent;
 }
 
 /* =========================
    CARD BANTUAN
 ========================= */
 .container-tutor {
-   .container-tutor {
     width: 100%;
     max-width: 800px;
 
@@ -59,7 +52,6 @@ body {
     border-radius: 25px;
 
     box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-}
 }
 
 .container-tutor:hover {
