@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             if (!data || data.length === 0) {
                 alert("Soal kosong!");
-                window.location.href = "kategori.html";
+                window.location.href = "Kategori.html";
                 return;
             }
 
