@@ -211,11 +211,22 @@ html {
     z-index: 2;
 }
 
-.main-logo img {
-    width: 120px;
+.logo-dls,
+.logo-tutwuri{
+    height: auto;
+    object-fit: contain;
+
     opacity: 0;
     transform: scale(0.3);
-    transition: all 0.8s ease;
+    transition: all .8s ease;
+}
+
+.logo-dls{
+    width: 120px;
+}
+
+.logo-tutwuri{
+    width: 120px;
 }
 
 
@@ -266,41 +277,34 @@ html {
     object-fit:contain;
 }
 
-.logo-dls{
-    width:95px;
-}
-
-.logo-tutwuri{
-    width:75px;
-}
-
 .logo-dls:hover,
 .logo-tutwuri:hover{
     transform:scale(1.08);
 }
 
-@media(max-width:768px){
+@media screen and (max-width:768px){
 
-.main-logo{
+    .main-logo{
+        width: 40%;
+        max-width: 240px;
+        gap: 10px;
+        top:15px;
+        left:15px;
+        transform:none;
+        padding:6px 14px;
+    }
 
-    top:25px;
+    .main-logo::after{
+        height: 34px;
+    }
 
-    padding:10px 20px;
+    .logo-dls{
+        width: 60px;
+    }
 
-    gap:15px;
-}
-
-.main-logo::after{
-    height:45px;
-}
-
-.logo-dls{
-    width:70px;
-}
-
-.logo-tutwuri{
-    width:55px;
-}
+    .logo-tutwuri{
+        width: 60px;
+    }
 
 }
 
