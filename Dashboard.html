@@ -44,21 +44,26 @@
             </div>  
         </div>
 
-        <!-- CONTENT -->
         <div class="content">
 
-            <!-- WELCOME -->
             <div class="welcome">
                 <h1 id="namaGuru">Selamat Datang, ...</h1>
             </div>
 
-            <!-- TABEL SOAL -->
             <div class="Daftar">
                 <h2>Daftar Soal Terupload:</h2>
+
+                <button id="hapusDipilih" class="btnHapusMassal">
+                    <i class="fa-solid fa-trash-can"></i>
+                    Hapus
+                </button>
 
                 <table>
                     <thead>
                         <tr>
+                            <th>
+                                <input type="checkbox" id="cekSemua">
+                            </th>
                             <th>No</th>
                             <th>Topik</th>
                             <th class="tgl">Tanggal Upload</th>
@@ -75,7 +80,7 @@
         </div>
 
     </div>
-    <!-- ✅ SIDEBAR MOBILE -->
+
     <div class="sidebar-mobile" id="sidebarMobile">
         <div class="sidebar-content">
             <h2>Menu</h2>

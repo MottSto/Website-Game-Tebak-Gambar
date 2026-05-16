@@ -754,3 +754,96 @@ tbody tr:hover {
     text-decoration: none;
     font-size: 20px;
 }
+
+/* ======================
+   BUTTON HAPUS MODERN
+====================== */
+
+.Daftar{
+    position: relative;
+}
+
+.btnHapusMassal{
+    position: absolute;
+
+    top: 18px;
+    right: 20px;
+
+    border: none;
+
+    background:
+    linear-gradient(
+    135deg,
+    #ff5f6d,
+    #d43f4f
+    );
+
+    color: white;
+
+    padding: 10px 16px;
+
+    border-radius: 30px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    box-shadow:
+    0 6px 15px
+    rgba(212,98,98,.35);
+
+    transition: .3s;
+}
+
+
+.btnHapusMassal i{
+    font-size:16px;
+}
+
+
+.btnHapusMassal:hover{
+
+    transform:
+    translateY(-2px);
+
+    box-shadow:
+    0 10px 20px
+    rgba(212,98,98,.5);
+
+}
+
+
+.btnHapusMassal:active{
+
+    transform:
+    scale(.96);
+
+}
+
+
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.btnHapusMassal{
+
+top:15px;
+
+right:15px;
+
+padding:8px 12px;
+
+font-size:12px;
+
+}
+
+}

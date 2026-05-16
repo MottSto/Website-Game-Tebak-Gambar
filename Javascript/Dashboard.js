@@ -5,6 +5,9 @@ const supabase = createClient(
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxmZm9yZGt5bXF2YW9hdGJoanVmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzY0MDYwNDgsImV4cCI6MjA5MTk4MjA0OH0.GuhTqrLsxHZn2xmvSav-kKI0tQ9w60yjIpjbGVjtbmU"
 );
 
+// ================= GLOBAL USER =================
+let currentUserId = null;
+
 // ================= USER =================
 async function loadUser() {
   const { data, error } = await supabase.auth.getUser();
@@ -15,6 +18,7 @@ async function loadUser() {
   }
 
   const user = data.user;
+  currentUserId = user.id;
 
   const { data: guru } = await supabase
     .from("Guru")
@@ -54,7 +58,7 @@ async function loadSoal(idGuru) {
   if (!data || data.length === 0) {
     tabel.innerHTML = `
       <tr>
-        <td colspan="5" style="text-align:center;">Belum ada soal</td>
+        <td colspan="6" style="text-align:center;">Belum ada soal</td>
       </tr>
     `;
     return;
@@ -68,11 +72,16 @@ async function loadSoal(idGuru) {
 
     tabel.innerHTML += `
       <tr>
+        <td>
+          <input type="checkbox" class="pilihSoal" data-id="${item.id}">
+        </td>
+
         <td>${index + 1}</td>
         <td>${topik}</td>
         <td>${item.tanggal || "-"}</td>
-        <td>${formatJam(item.jam)}</td> 
-        <td class="aksi">
+        <td>${formatJam(item.jam)}</td>
+
+        <td>
           <button class="btnHapus" data-id="${item.id}">
             <i class="fa-solid fa-trash"></i>
           </button>
@@ -81,83 +90,119 @@ async function loadSoal(idGuru) {
     `;
   });
 
-  // 🔥 FIX: event listener setelah render
+  // ================= SINGLE DELETE =================
   document.querySelectorAll(".btnHapus").forEach(btn => {
     btn.addEventListener("click", function () {
-      const id = this.getAttribute("data-id");
-      hapusSoal(id);
+      hapusSingleSoal(this.dataset.id);
     });
   });
 }
 
-// ================= HAPUS SOAL =================
-async function hapusSoal(id) {
-  const konfirmasi = confirm("Yakin mau hapus?");
+// ================= HAPUS 1 DATA =================
+async function hapusSingleSoal(id) {
+
+  const konfirmasi = confirm("Yakin hapus soal ini?");
   if (!konfirmasi) return;
 
-  // ambil gambar
-  const { data: soal, error: errGet } = await supabase
+  const { data: soal } = await supabase
     .from("Soal")
-    .select('"Gambar"')
+    .select("Gambar")
     .eq("id", id)
     .single();
 
-  if (errGet) {
-    console.error(errGet);
-    alert("Gagal ambil data!");
-    return;
-  }
+  if (soal?.Gambar) {
+    const cleanPath = soal.Gambar.split("/").pop().trim();
 
-  const namaFile = soal?.Gambar;
-
-  // hapus storage
-  if (namaFile) {
-    let cleanPath = namaFile.split("/").pop().trim();
-
-    const { error: errStorage } = await supabase
+    await supabase
       .storage
       .from("Soal-image")
       .remove([cleanPath]);
-
-    if (errStorage) {
-      console.error(errStorage);
-      alert("Gagal hapus gambar!");
-      return;
-    }
   }
 
-  // hapus database
-  const { error: errDelete } = await supabase
+  await supabase
     .from("Soal")
     .delete()
     .eq("id", id);
 
-  if (errDelete) {
-    console.error(errDelete);
-    alert("Gagal hapus data!");
-  } else {
-    alert("Berhasil dihapus!");
-    loadUser(); // reload data
-  }
+  alert("Soal berhasil dihapus");
+
+  loadSoal(currentUserId);
 }
 
+// ================= HAPUS BANYAK =================
+async function hapusBanyakSoal() {
+
+  const dipilih = document.querySelectorAll(".pilihSoal:checked");
+
+  if (dipilih.length === 0) {
+    alert("Pilih data dulu");
+    return;
+  }
+
+  const konfirmasi = confirm("Yakin hapus soal terpilih?");
+  if (!konfirmasi) return;
+
+  for (const item of dipilih) {
+
+    let id = item.dataset.id;
+
+    const { data: soal } = await supabase
+      .from("Soal")
+      .select("Gambar")
+      .eq("id", id)
+      .single();
+
+    if (soal?.Gambar) {
+      const cleanPath = soal.Gambar.split("/").pop().trim();
+
+      await supabase
+        .storage
+        .from("Soal-image")
+        .remove([cleanPath]);
+    }
+
+    await supabase
+      .from("Soal")
+      .delete()
+      .eq("id", id);
+  }
+
+  alert("Soal berhasil dihapus");
+
+  loadSoal(currentUserId);
+}
+
+// ================= CHECKBOX SELECT ALL =================
+document.addEventListener("change", function (e) {
+  if (e.target && e.target.id === "cekSemua") {
+    document.querySelectorAll(".pilihSoal").forEach(item => {
+      item.checked = e.target.checked;
+    });
+  }
+});
+
 // ================= INIT =================
-document.addEventListener("DOMContentLoaded", loadUser);
-
 document.addEventListener("DOMContentLoaded", () => {
-    const hamburger = document.querySelector(".hamburger");
-    const sidebar = document.getElementById("sidebarMobile");
-    const overlay = document.getElementById("overlay");
 
-    // buka sidebar
-    hamburger.addEventListener("click", () => {
-        sidebar.classList.add("active");
-        overlay.classList.add("active");
-    });
+  loadUser();
 
-    // klik luar (overlay) = tutup
-    overlay.addEventListener("click", () => {
-        sidebar.classList.remove("active");
-        overlay.classList.remove("active");
-    });
+  const btnHapusMassal = document.getElementById("hapusDipilih");
+
+  if (btnHapusMassal) {
+    btnHapusMassal.addEventListener("click", hapusBanyakSoal);
+  }
+
+  const hamburger = document.querySelector(".hamburger");
+  const sidebar = document.getElementById("sidebarMobile");
+  const overlay = document.getElementById("overlay");
+
+  hamburger.addEventListener("click", () => {
+    sidebar.classList.add("active");
+    overlay.classList.add("active");
+  });
+
+  overlay.addEventListener("click", () => {
+    sidebar.classList.remove("active");
+    overlay.classList.remove("active");
+  });
 });
