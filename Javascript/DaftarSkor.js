@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     const tableBody = document.getElementById("dataSkor");
 
-    // 🔥 LOAD DATA
+    // ================= LOAD DATA =================
     async function loadData() {
 
         const { data, error } = await supabase
@@ -27,7 +27,6 @@ document.addEventListener("DOMContentLoaded", async () => {
             return;
         }
 
-        // kosongkan tabel
         tableBody.innerHTML = "";
 
         if (!data || data.length === 0) {
@@ -46,22 +45,20 @@ document.addEventListener("DOMContentLoaded", async () => {
             const nama = item.siswa?.nama_siswa || "-";
             const skor = item.total_skor || 0;
 
-            // 🎯 mapping topik
             let topik = "Tidak diketahui";
             if (item.id_topik == 1) topik = "Alat Musik";
             if (item.id_topik == 2) topik = "Rumah Adat";
 
             const row = `
                 <tr>
+                    <td>
+                        <input type="checkbox" class="pilihSkor" data-id="${item.id}">
+                    </td>
+
                     <td>${index + 1}</td>
                     <td>${nama}</td>
                     <td>${topik}</td>
                     <td>${skor}</td>
-                    <td class="aksi">
-                        <button onclick="hapusData(${item.id})">
-                            <i class="fa-solid fa-trash"></i>
-                        </button>
-                    </td>
                 </tr>
             `;
 
@@ -69,7 +66,54 @@ document.addEventListener("DOMContentLoaded", async () => {
         });
     }
 
-    // 🔥 HAPUS DATA
+    // ================= SELECT ALL =================
+    document.addEventListener("change", function (e) {
+        if (e.target && e.target.id === "cekSemua") {
+            document.querySelectorAll(".pilihSkor").forEach(item => {
+                item.checked = e.target.checked;
+            });
+        }
+    });
+
+    // ================= HAPUS MASSAL =================
+    async function hapusBanyakSkor() {
+
+        const dipilih = document.querySelectorAll(".pilihSkor:checked");
+
+        if (dipilih.length === 0) {
+            alert("Pilih data dulu!");
+            return;
+        }
+
+        const konfirmasi = confirm("Yakin ingin menghapus data terpilih?");
+        if (!konfirmasi) return;
+
+        for (const item of dipilih) {
+
+            const id = item.dataset.id;
+
+            const { error } = await supabase
+                .from("permainan")
+                .delete()
+                .eq("id", id);
+
+            if (error) {
+                console.error(error);
+            }
+        }
+
+        alert("Data berhasil dihapus");
+        loadData();
+    }
+
+    // ================= BUTTON HAPUS MASSAL =================
+    const btnHapus = document.getElementById("hapusDipilih");
+
+    if (btnHapus) {
+        btnHapus.addEventListener("click", hapusBanyakSkor);
+    }
+
+    // ================= HAPUS 1 (OPSIONAL) =================
     window.hapusData = async (id) => {
 
         const konfirmasi = confirm("Yakin ingin menghapus data ini?");
@@ -81,29 +125,28 @@ document.addEventListener("DOMContentLoaded", async () => {
             .eq("id", id);
 
         if (error) {
-            console.error("ERROR DELETE:", error);
             alert("Gagal hapus data!");
         } else {
             alert("Data berhasil dihapus");
-            loadData(); // reload tabel
+            loadData();
         }
     };
 
     loadData();
 });
 
+// ================= SIDEBAR =================
 document.addEventListener("DOMContentLoaded", () => {
+
     const hamburger = document.querySelector(".hamburger");
     const sidebar = document.getElementById("sidebarMobile");
     const overlay = document.getElementById("overlay");
 
-    // buka sidebar
     hamburger.addEventListener("click", () => {
         sidebar.classList.add("active");
         overlay.classList.add("active");
     });
 
-    // klik luar (overlay) = tutup
     overlay.addEventListener("click", () => {
         sidebar.classList.remove("active");
         overlay.classList.remove("active");
