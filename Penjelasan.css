@@ -15,7 +15,6 @@ html {
     justify-content: center;
 }
 
-/* BACKGROUND */
 .bg1 {
     position: fixed;
     width: 100%;
@@ -28,7 +27,6 @@ html {
     filter: brightness(0.8);
 }
 
-/* CARD BELAKANG (GAME) */
 .card {
     width: 50%;
     height: 80%;
@@ -42,7 +40,6 @@ html {
     filter: blur(6px) brightness(0.7);
 }
 
-/* GAMBAR */
 .Gambar-container {
     background-color: white;
     width: 70%;
@@ -54,7 +51,6 @@ html {
     border-radius: 20px;
 }
 
-/* JAWABAN */
 .container-jawaban {
     display: flex;
     flex-direction: row;
@@ -70,7 +66,6 @@ html {
     cursor: pointer;
 }
 
-/* OVERLAY PENJELASAN */
 .rectangle {
     display: flex;
     justify-content: center;
@@ -80,7 +75,6 @@ html {
     width: 60%;
     height: 85vh;
 
-    /* GLASS EFFECT */
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
@@ -93,7 +87,6 @@ html {
     animation: fadeIn 0.5s ease;
 }
 
-/* BOX PENJELASAN */
 .penjelasan-box {
     display: flex;
     justify-content: center;
@@ -119,7 +112,6 @@ html {
     box-shadow: inset 0 5px 15px rgba(0,0,0,0.1);
 }
 
-/* BUTTON SKIP */
 #skipBtn {
     margin-top: 20px;
     padding: 12px 25px;
@@ -146,7 +138,6 @@ html {
     transform: scale(0.95);
 }
 
-/* ANIMASI MASUK */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -158,7 +149,6 @@ html {
     }
 }
 
-/* MOBILE */
 @media (max-width:768px) {
     .card{
         background-color: transparent;

@@ -7,7 +7,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     const tableBody = document.getElementById("dataSkor");
 
-    // ================= LOAD DATA =================
     async function loadData() {
 
         const { data, error } = await supabase
@@ -66,7 +65,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         });
     }
 
-    // ================= SELECT ALL =================
     document.addEventListener("change", function (e) {
         if (e.target && e.target.id === "cekSemua") {
             document.querySelectorAll(".pilihSkor").forEach(item => {
@@ -75,7 +73,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
     });
 
-    // ================= HAPUS MASSAL =================
     async function hapusBanyakSkor() {
 
         const dipilih = document.querySelectorAll(".pilihSkor:checked");
@@ -106,14 +103,12 @@ document.addEventListener("DOMContentLoaded", async () => {
         loadData();
     }
 
-    // ================= BUTTON HAPUS MASSAL =================
     const btnHapus = document.getElementById("hapusDipilih");
 
     if (btnHapus) {
         btnHapus.addEventListener("click", hapusBanyakSkor);
     }
 
-    // ================= HAPUS 1 (OPSIONAL) =================
     window.hapusData = async (id) => {
 
         const konfirmasi = confirm("Yakin ingin menghapus data ini?");
@@ -135,7 +130,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     loadData();
 });
 
-// ================= SIDEBAR =================
 document.addEventListener("DOMContentLoaded", () => {
 
     const hamburger = document.querySelector(".hamburger");

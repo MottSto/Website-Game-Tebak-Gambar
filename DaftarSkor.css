@@ -112,7 +112,7 @@ th, td {
     display: flex;
     flex-direction: column;
 
-    flex: 1; /* 🔥 penting supaya mengisi tinggi sidebar */
+    flex: 1;
 
     padding: 20px;
     gap: 10px;
@@ -125,7 +125,7 @@ th, td {
 }
 
 .menu-bottom {
-    margin-top: auto; /* 🔥 ini yang dorong ke bawah */
+    margin-top: auto;
 }
 
 .menu-item6 {
@@ -147,37 +147,32 @@ th, td {
 
     position: relative;
 
-    margin: 0 auto; /* 🔥 INI YANG MEMBUAT KE TENGAH */
+    margin: 0 auto;
 
     color: white;
 }
 
-/* HOVER SAMA */
 .menu-item6:hover {
     background: rgba(255,255,255,0.15);
     transform: translateX(6px);
 }
 
-/* ICON */
 .menu-item6 i {
     font-size: 35px;
     color: rgb(0, 0, 0);
     transition: 0.3s;
 }
 
-/* ICON HOVER */
 .menu-item6:hover i {
     transform: scale(1.2);
 }
 
-/* LINK */
 .menu-item6 a {
     color: white !important;
     text-decoration: none !important;
     font-size: 20px;
 }
 
-/* GARIS KIRI ANIMASI */
 .menu-item6::before {
     content: "";
     position: absolute;
@@ -378,21 +373,11 @@ th, td {
     font-size: 20px;
 }
 
-/* =========================
-   FINAL MODERN UI BOOST
-   (TANPA UBAH UKURAN / LAYOUT)
-========================= */
-
-/* FIX LINK SIDEBAR (HILANGKAN BIRU & UNDERLINE) */
 .menu-item1 a,
 .menu-item2 a {
     text-decoration: none;
     color: white;
 }
-
-/* =========================
-   SIDEBAR MODERN EFFECT
-========================= */
 
 .menu-item1,
 .menu-item2 {
@@ -400,7 +385,6 @@ th, td {
     border-radius: 10px;
 }
 
-/* hover lebih smooth & modern */
 .menu-item1:hover,
 .menu-item2:hover {
     background: rgba(255, 255, 255, 0.12);
@@ -408,7 +392,6 @@ th, td {
     box-shadow: 0 6px 15px rgba(0,0,0,0.15);
 }
 
-/* icon animation */
 .menu-item1 i,
 .menu-item2 i {
     transition: 0.25s ease;
@@ -419,7 +402,6 @@ th, td {
     transform: scale(1.2) rotate(-5deg);
 }
 
-/* garis aktif kiri */
 .menu-item1::before,
 .menu-item2::before {
     content: "";
@@ -454,7 +436,6 @@ th, td {
     background: linear-gradient(90deg, rgb(212,98,98), transparent);
 }
 
-/* hover card lebih smooth */
 .Daftar {
     transition: 0.3s ease;
 }
@@ -464,9 +445,6 @@ th, td {
     box-shadow: 0 18px 35px rgba(0,0,0,0.12);
 }
 
-/* =========================
-   TABLE MODERN LOOK
-========================= */
 
 table {
     border-radius: 10px;
@@ -482,7 +460,6 @@ td {
     font-size: 14px;
 }
 
-/* row hover lebih soft */
 tbody tr {
     transition: 0.2s ease;
 }
@@ -494,10 +471,6 @@ tbody tr:hover {
 html, body {
     overflow: hidden;
 }
-
-/* =========================
-   GLOBAL SMOOTH
-========================= */
 
 * {
     transition: all 0.2s ease;
@@ -581,11 +554,6 @@ html, body {
    }
 }
 
-/* =========================
-   UNIFIKASI DASHBOARD = DAFTAR SKOR (MOBILE FIX)
-========================= */
-
-/* NAVBAR MOBILE SAMA PERSIS DASHBOARD */
 @media (max-width:768px) {
 
     .Navbar-container {
@@ -633,9 +601,6 @@ html, body {
     }
 }
 
-/* =========================
-   CONTENT MOBILE RAPI
-========================= */
 @media (max-width:768px) {
 
     .content {
@@ -663,7 +628,7 @@ html, body {
     }
 
     table {
-        min-width: 600px; /* biar scroll rapi */
+        min-width: 600px;
         font-size: 12px;
     }
 
@@ -723,16 +688,12 @@ html, body {
 
 
 .btnHapusMassal:hover{
-
     transform:
     translateY(-2px);
-
     box-shadow:
     0 10px 20px
     rgba(212,98,98,.5);
-
 }
-
 
 .btnHapusMassal:active{
 
@@ -741,22 +702,13 @@ html, body {
 
 }
 
-
-
-/* MOBILE */
-
 @media(max-width:768px){
 
-.btnHapusMassal{
-
-top:15px;
-
-right:15px;
-
-padding:8px 12px;
-
-font-size:12px;
-
-}
+    .btnHapusMassal{
+        top:15px;
+        right:15px;
+        padding:8px 12px;
+        font-size:12px;
+    }
 
 }

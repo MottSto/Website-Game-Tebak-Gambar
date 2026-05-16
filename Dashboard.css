@@ -14,9 +14,6 @@ html {
     gap: 15%;
 }
 
-/* =========================
-   SIDEBAR
-========================= */
 .Navbar-container {
     width: 290px;
     background: linear-gradient(180deg, rgb(212, 98, 98), rgb(180, 70, 70));
@@ -32,7 +29,6 @@ html {
     border-right: 1px solid rgba(255,255,255,0.1);
 }   
 
-/* PROFILE */
 .profile {
     display: flex;
     align-items: flex-start;
@@ -54,14 +50,12 @@ html {
     margin-bottom: 25px;
 }
 
-/* MENU TEXT */
 .menu a {
     font-size: large;
     text-decoration: none;
     color: aliceblue;
 }
 
-/* HR */
 hr {
     border: none;
     height: 1px;
@@ -69,17 +63,11 @@ hr {
     margin: 15px 0;
 }
 
-/* =========================
-   CONTENT AREA
-========================= */
 .content {
     flex: 1;
     padding: 30px;
 }
 
-/* =========================
-   WELCOME CARD (MODERN)
-========================= */
 .welcome {
     background: linear-gradient(135deg, #ffffff, #f7f7f7);
     padding: 20px;
@@ -94,9 +82,6 @@ hr {
     box-shadow: 0 15px 30px rgba(0,0,0,0.12);
 }
 
-/* =========================
-   DAFTAR CARD (MODERN)
-========================= */
 .Daftar {
     background: linear-gradient(135deg, #ffffff, #fafafa);
     padding: 20px;
@@ -113,10 +98,6 @@ hr {
     box-shadow: 0 15px 30px rgba(0,0,0,0.12);
 }
 
-/* =========================
-   TABLE FULL SEPERTI DASHBOARD
-========================= */
-
 table {
     width: 100%;
     margin-top: 15px;
@@ -126,7 +107,6 @@ table {
     overflow: hidden;
 }
 
-/* BAGI LEBAR KOLOM */
 th:nth-child(1),
 td:nth-child(1) {
     width: 8%;
@@ -160,7 +140,6 @@ td {
     box-sizing: border-box;
 }
 
-/* AGAR CONTAINER TABEL FULL */
 .Daftar {
     width: 100%;
     box-sizing: border-box;
@@ -191,14 +170,11 @@ tr:hover td {
     color: #c0392b;
 }
 
-/* =========================
-   MENU SIDEBAR MODERN HOVER
-========================= */
 .menu {
     display: flex;
     flex-direction: column;
 
-    flex: 1; /* 🔥 penting supaya mengisi tinggi sidebar */
+    flex: 1;
 
     padding: 20px;
     gap: 10px;
@@ -211,7 +187,7 @@ tr:hover td {
 }
 
 .menu-bottom {
-    margin-top: auto; /* 🔥 ini yang dorong ke bawah */
+    margin-top: auto;
 }
 
 .menu-item1,
@@ -228,14 +204,12 @@ tr:hover td {
     position: relative;
 }
 
-/* hover animasi geser */
 .menu-item1:hover,
 .menu-item2:hover {
     background: rgba(255,255,255,0.15);
     transform: translateX(6px);
 }
 
-/* garis kiri animasi */
 .menu-item1::before,
 .menu-item2::before {
     content: "";
@@ -254,7 +228,6 @@ tr:hover td {
     transform: scaleY(1);
 }
 
-/* icon hover */
 .menu-item1 i,
 .menu-item2 i {
     font-size: 30px;
@@ -295,37 +268,32 @@ tr:hover td {
 
     position: relative;
 
-    margin: 0 auto; /* 🔥 INI YANG MEMBUAT KE TENGAH */
+    margin: 0 auto;
 
     color: white;
 }
 
-/* HOVER SAMA */
 .menu-item6:hover {
     background: rgba(255,255,255,0.15);
     transform: translateX(6px);
 }
 
-/* ICON */
 .menu-item6 i {
     font-size: 35px;
     color: rgb(0, 0, 0);
     transition: 0.3s;
 }
 
-/* ICON HOVER */
 .menu-item6:hover i {
     transform: scale(1.2);
 }
 
-/* LINK */
 .menu-item6 a {
     color: white !important;
     text-decoration: none !important;
     font-size: 20px;
 }
 
-/* GARIS KIRI ANIMASI */
 .menu-item6::before {
     content: "";
     position: absolute;
@@ -346,10 +314,6 @@ tr:hover td {
     transform: scaleY(1);
 }
 
-
-/* =========================
-   MOBILE
-========================= */
 .hamburger {
     display: none;
 }
@@ -359,7 +323,6 @@ html, body {
     overflow: hidden;
 }
 
-/* sidebar mobile tetap */
 .overlay {
     position: fixed;
     top: 0;
@@ -396,7 +359,6 @@ html, body {
     color: white;
 }
 
-/* MOBILE */
 @media (max-width:768px) {
 
     .container {
@@ -447,17 +409,14 @@ html, body {
     height: 100%;
 }
 
-/* FIX FLEX BIAR TIDAK RUSAK DI CHROME */
 .container {
     min-height: 100vh;
 }
 
-/* CEGAH CONTENT KEJEPIT */
 .content {
     min-width: 0;
 }
 
-/* TABLE BIAR TIDAK KELUAR LAYAR */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -465,14 +424,10 @@ table {
     overflow-x: auto;
 }
 
-/* SIDEBAR TETAP STABIL */
 .Navbar-container {
     flex-shrink: 0;
 }
 
-/* =========================
-   MOBILE FIX (TIDAK UBAH STYLE)
-========================= */
 @media (max-width:768px) {
 
     /* SIDEBAR ATAS */
@@ -485,12 +440,11 @@ table {
         padding: 10px 15px;
     }
 
-    /* PROFILE */
    .profile {
         display: flex;
         align-items: center;
         gap: 10px;
-        flex: 1; /* ini bikin dia ambil sisa ruang */
+        flex: 1;
     }
 
     .profile i {
@@ -503,19 +457,17 @@ table {
         line-height: 1.2;
     }
 
-    /* 🔥 FIX INI: HAMBURGER KE KANAN (TIDAK TERLALU MELEKAT) */
     .hamburger {
         display: block;
         padding: 0;
         margin-left: auto;
-        margin-right: 10px; /* jarak dari kanan */
+        margin-right: 10px;
     }
 
     .hamburger i {
         font-size: 28px;
     }
 
-    /* MENU HIDE */
     .menu {
         display: none;
     }
@@ -524,7 +476,6 @@ table {
         display: none;
     }
 
-    /* CONTENT */
     .content {
         padding: 15px;
         gap: 20px;
@@ -557,18 +508,11 @@ table {
     }
 }
 
-
-/* =========================
-   SAMAKAN TABEL DENGAN DAFTAR SKOR
-========================= */
-
-/* CARD DAFTAR */
 .Daftar {
     position: relative;
     overflow-y: scroll;
 }
 
-/* garis atas modern */
 .Daftar::before {
     content: "";
     position: absolute;
@@ -579,7 +523,6 @@ table {
     background: linear-gradient(90deg, rgb(212,98,98), transparent);
 }
 
-/* hover card smooth */
 .Daftar {
     transition: 0.3s ease;
 }
@@ -589,24 +532,20 @@ table {
     box-shadow: 0 18px 35px rgba(0,0,0,0.12);
 }
 
-/* TABLE MODERN */
 table {
     border-radius: 10px;
     overflow: hidden;
 }
 
-/* HEADER TABLE */
 th {
     letter-spacing: 0.5px;
     font-size: 14px;
 }
 
-/* DATA TABLE */
 td {
     font-size: 14px;
 }
 
-/* HOVER ROW */
 tbody tr {
     transition: 0.2s ease;
 }
@@ -615,7 +554,6 @@ tbody tr:hover {
     background: rgba(212, 98, 98, 0.08);
 }
 
-/* ICON DELETE */
 .fa-trash {
     cursor: pointer;
     color: #e74c3c;
@@ -627,7 +565,6 @@ tbody tr:hover {
     color: #c0392b;
 }
 
-/* GLOBAL SMOOTH */
 * {
     transition: all 0.2s ease;
 }
@@ -755,10 +692,6 @@ tbody tr:hover {
     font-size: 20px;
 }
 
-/* ======================
-   BUTTON HAPUS MODERN
-====================== */
-
 .Daftar{
     position: relative;
 }
@@ -817,9 +750,7 @@ tbody tr:hover {
     box-shadow:
     0 10px 20px
     rgba(212,98,98,.5);
-
 }
-
 
 .btnHapusMassal:active{
 
@@ -828,22 +759,12 @@ tbody tr:hover {
 
 }
 
-
-
-/* MOBILE */
-
 @media(max-width:768px){
 
-.btnHapusMassal{
-
-top:15px;
-
-right:15px;
-
-padding:8px 12px;
-
-font-size:12px;
-
-}
-
+    .btnHapusMassal{
+        top:15px;
+        right:15px;
+        padding:8px 12px;
+        font-size:12px;
+    }
 }

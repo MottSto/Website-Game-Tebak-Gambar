@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     const skor = parseInt(localStorage.getItem("skor")) || 0;
     const id_siswa = localStorage.getItem("id_siswa");
-    const id_topik = localStorage.getItem("kategori"); // ✅ TAMBAHAN
+    const id_topik = localStorage.getItem("kategori");
 
     console.log("SKOR:", skor);
     console.log("ID SISWA:", id_siswa);
@@ -15,7 +15,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     document.getElementById("skorValue").innerText = skor;
 
-    // ❗ validasi
     if (!id_siswa || !id_topik) {
         alert("Data tidak lengkap! ulangi dari awal");
         return;
@@ -30,7 +29,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                 {
                     total_skor: skor,
                     id_siswa: parseInt(id_siswa),
-                    id_topik: parseInt(id_topik), // ✅ SIMPAN TOPIK
+                    id_topik: parseInt(id_topik),
                     tanggal: new Date().toISOString()
                 }
             ]);
@@ -44,7 +43,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
     }
 
-    // 🔙 tombol menu
     const btnMenu = document.getElementById("btnMenu");
 
     if (btnMenu) {

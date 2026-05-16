@@ -15,21 +15,18 @@ async function uploadSoal() {
   const topik = document.getElementById("topik").value;
   const file = document.getElementById("Gambar").files[0];
 
-  console.log("Topik dipilih:", topik); // DEBUG
+  console.log("Topik dipilih:", topik);
 
-  // 🔥 VALIDASI TOPIK
   if (!topik) {
     alert("Pilih topik terlebih dahulu!");
     return;
   }
 
-  // 🔥 VALIDASI INPUT
   if (!soal || !jawabanBenar || !jawabanSalah1 || !jawabanSalah2) {
     alert("Isi semua field!");
     return;
   }
 
-  // 🔐 CEK USER LOGIN
   const { data, error: userError } = await client.auth.getUser();
 
   if (userError || !data.user) {
@@ -42,7 +39,6 @@ async function uploadSoal() {
 
   let fileName = null;
 
-  // 🔥 UPLOAD GAMBAR (FIX SPASI)
   if (file) {
     fileName = Date.now() + "_" + file.name.replace(/\s+/g, "_");
 
@@ -59,7 +55,6 @@ async function uploadSoal() {
 
   const now = new Date();
 
-  // 🔥 INSERT KE DATABASE (FIX UTAMA)
   const { error } = await client
     .from("Soal")
     .insert([
@@ -69,8 +64,8 @@ async function uploadSoal() {
         jawaban_salah_1: jawabanSalah1,
         jawaban_salah_2: jawabanSalah2,
         penjelasan_jawaban: penjelasan,
-        Gambar: fileName, // simpan nama file saja
-        id_topik: Number(topik), // 🔥 FIX INI
+        Gambar: fileName,
+        id_topik: Number(topik),
         id_Guru: id_Guru,
         tanggal: now.toISOString().split("T")[0],
         jam: now.toLocaleTimeString()
@@ -86,7 +81,6 @@ async function uploadSoal() {
   }
 }
 
-// 🔄 RESET FORM
 function resetForm() {
   document.getElementById("Soal").value = "";
   document.getElementById("jawabanBenar").value = "";
@@ -94,7 +88,7 @@ function resetForm() {
   document.getElementById("jawabanSalah2").value = "";
   document.getElementById("penjelasan").value = "";
   document.getElementById("Gambar").value = "";
-  document.getElementById("topik").value = ""; // FIX
+  document.getElementById("topik").value = "";
 }
 
 document.addEventListener("DOMContentLoaded", () => {

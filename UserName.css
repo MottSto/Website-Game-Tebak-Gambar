@@ -13,7 +13,6 @@ html {
     justify-content: center;
 }
 
-/* BACKGROUND */
 .bg1 {
     width: 100%;
     height: 100vh;
@@ -24,9 +23,6 @@ html {
     filter: brightness(0.8);
 }
 
-/* =========================
-   🔥 MODERN RECTANGLE / TOP BAR
-========================= */
 #rectangle {
     position: fixed;
     top: 0;
@@ -58,7 +54,6 @@ html {
     animation: slideDown 0.5s ease-in-out;
 }
 
-/* ICON BACK */
 .rectangle i {
     color: white;
     font-size: 38px;
@@ -74,19 +69,16 @@ html {
     transition: all 0.3s ease;
 }
 
-/* HOVER ICON */
 .rectangle i:hover {
     transform: scale(1.15) rotate(-5deg);
     background: rgba(255,255,255,0.25);
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
-/* CLICK ICON */
 .rectangle i:active {
     transform: scale(0.95);
 }
 
-/* ANIMATION BAR */
 @keyframes slideDown {
     from {
         transform: translateY(-100%);
@@ -98,9 +90,6 @@ html {
     }
 }
 
-/* =========================
-   USERNAME CARD
-========================= */
 .username {
     width: 420px;
     padding: 30px;
@@ -168,7 +157,6 @@ html {
     transform: scale(0.97);
 }
 
-/* ANIMATION CARD */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -180,9 +168,6 @@ html {
     }
 }
 
-/* =========================
-   MOBILE
-========================= */
 @media (max-width:768px) {
 
     .username {

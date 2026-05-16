@@ -104,9 +104,6 @@ document.addEventListener("DOMContentLoaded", () => {
         tampilkanSoal();
     }
 
-    // =========================
-    // TAMPILKAN SOAL
-    // =========================
     function tampilkanSoal() {
 
         if (indexSoal >= soalList.length) {
@@ -152,9 +149,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // =========================
-    // FEEDBACK
-    // =========================
     function showFeedback(isBenar) {
 
         feedbackBox.classList.remove("hidden");
@@ -166,9 +160,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 1000);
     }
 
-    // =========================
-    // JAWABAN
-    // =========================
     function handleJawaban(btn) {
 
         if (sudahJawab) return;

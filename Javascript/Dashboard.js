@@ -5,10 +5,8 @@ const supabase = createClient(
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxmZm9yZGt5bXF2YW9hdGJoanVmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzY0MDYwNDgsImV4cCI6MjA5MTk4MjA0OH0.GuhTqrLsxHZn2xmvSav-kKI0tQ9w60yjIpjbGVjtbmU"
 );
 
-// ================= GLOBAL USER =================
 let currentUserId = null;
 
-// ================= USER =================
 async function loadUser() {
   const { data, error } = await supabase.auth.getUser();
 
@@ -32,13 +30,11 @@ async function loadUser() {
   loadSoal(user.id);
 }
 
-// ================= FORMAT JAM =================
 function formatJam(jam) {
   if (!jam) return "-";
   return jam.substring(0, 5).replace(":", ".");
 }
 
-// ================= LOAD SOAL =================
 async function loadSoal(idGuru) {
   const { data, error } = await supabase
     .from("Soal")
@@ -90,7 +86,6 @@ async function loadSoal(idGuru) {
     `;
   });
 
-  // ================= SINGLE DELETE =================
   document.querySelectorAll(".btnHapus").forEach(btn => {
     btn.addEventListener("click", function () {
       hapusSingleSoal(this.dataset.id);
@@ -98,7 +93,6 @@ async function loadSoal(idGuru) {
   });
 }
 
-// ================= HAPUS 1 DATA =================
 async function hapusSingleSoal(id) {
 
   const konfirmasi = confirm("Yakin hapus soal ini?");
@@ -129,7 +123,6 @@ async function hapusSingleSoal(id) {
   loadSoal(currentUserId);
 }
 
-// ================= HAPUS BANYAK =================
 async function hapusBanyakSoal() {
 
   const dipilih = document.querySelectorAll(".pilihSoal:checked");
@@ -172,7 +165,6 @@ async function hapusBanyakSoal() {
   loadSoal(currentUserId);
 }
 
-// ================= CHECKBOX SELECT ALL =================
 document.addEventListener("change", function (e) {
   if (e.target && e.target.id === "cekSemua") {
     document.querySelectorAll(".pilihSoal").forEach(item => {
@@ -181,7 +173,6 @@ document.addEventListener("change", function (e) {
   }
 });
 
-// ================= INIT =================
 document.addEventListener("DOMContentLoaded", () => {
 
   loadUser();

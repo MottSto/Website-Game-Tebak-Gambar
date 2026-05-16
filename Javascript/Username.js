@@ -15,7 +15,6 @@ async function mulai() {
 
     try {
 
-        // ✅ CEK apakah username sudah ada
         const { data: existingUser, error: errorCheck } = await client
             .from("siswa")
             .select("*")
@@ -31,16 +30,14 @@ async function mulai() {
         let idSiswa;
 
         if (existingUser) {
-            // ✅ jika sudah ada, pakai ID lama
             idSiswa = existingUser.id;
         } else {
-            // ✅ jika belum ada, insert baru + ambil ID
             const { data, error } = await client
                 .from("siswa")
                 .insert([
                     { nama_siswa: username }
                 ])
-                .select(); // WAJIB agar dapat ID
+                .select();
 
             if (error) {
                 console.error("Error:", error.message);
@@ -51,12 +48,10 @@ async function mulai() {
             idSiswa = data[0].id;
         }
 
-        // ✅ SIMPAN ID SISWA
         localStorage.setItem("id_siswa", idSiswa);
 
         console.log("ID SISWA:", idSiswa);
 
-        // pindah ke halaman kategori
         window.location.href = "Arahan.html";
 
     } catch (err) {
